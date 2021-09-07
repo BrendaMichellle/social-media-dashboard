@@ -45,6 +45,10 @@ body {
   color: #1f212e;
 }
 
+.followers {
+  margin-top: 10px;
+}
+
 hr {
   margin: 20px 0;
 }
@@ -73,7 +77,8 @@ p {
           justify-content: space-between;
 }
 
-.dashboard {
+.dashboard,
+.data__dashboard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,7 +95,8 @@ p {
   margin-top: 30px;
 }
 
-.dashboard__item {
+.dashboard__item,
+.data__dashboard__item {
   background-color: #f0f2fa;
   width: 90vw;
   padding: 15px 30px;
@@ -119,7 +125,8 @@ p {
 }
 
 .item__username,
-.count {
+.count,
+.count__percent {
   display: inline;
   font-size: 0.8rem;
 }
@@ -154,6 +161,60 @@ p {
   top: -25px;
 }
 
+/* ------ Data Dashboard ---- */
+.title--overview {
+  font-size: 1.4rem;
+  color: #63687e;
+  margin-top: 15px;
+}
+
+.data__dashboard__item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+  margin-bottom: 20px;
+  text-align: unset;
+  padding: 20px;
+}
+
+.data__description {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.data {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  color: #1f212e;
+  font-size: 1.5rem;
+}
+
+.item__icon {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.data__count {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
 /* ------ Theme Toggle ----- */
 .toggle {
   width: 40px;
@@ -176,11 +237,11 @@ p {
 .toggle::before {
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  top: 0;
-  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
   background-color: #fff;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -203,11 +264,26 @@ p {
   color: white;
 }
 
-.darkMode .item__followers {
+.darkMode p {
+  color: #8b97c6;
+}
+
+.darkMode .count,
+.darkMode .count__percent {
+  color: #1db489;
+}
+
+.darkMode .down {
+  color: #c4032a;
+}
+
+.darkMode .item__followers,
+.darkMode .data {
   color: white;
 }
 
-.darkMode .dashboard__item {
+.darkMode .dashboard__item,
+.darkMode .data__dashboard__item {
   background-color: #252a41;
 }
 /*# sourceMappingURL=style.css.map */
