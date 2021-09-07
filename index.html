@@ -5,70 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Social Media Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-
-  Social Media Dashboard
-  Total Followers: 23,004
-
-  Dark Mode
-
-  
-
-  @nathanf
-  1987
-  Followers
-  12 Today
-
-  @nathanf
-  1044
-  Followers
-  99 Today
-
-  @realnathanf
-  11k
-  Followers
-  1099 Today
-
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
-
-
-
-  Overview - Today
-
-  Page Views
-  87
-  3%
-
-  Likes
-  52
-  2%
-
-  Likes
-  5462
-  2257%
-
-  Profile Views
-  52k
-  1375%
-
-  Retweets
-  117
-  303%
-
-  Likes
-  507
-  553%
-
-  Likes
-  107
-  19%
-
-  Total Views
-  1407
-  12%
+  <main class="container">
+    <header>
+      <h1 class="title">Social Media Dashboard</h1>
+      <p class="followers">Total Followers: 23,004</p>
+      <hr>
+      <section class="theme--toggle">
+        <p class="theme__description">Dark Mode</p>
+        <input class="toggle" type="checkbox">
+      </section>
+    </header>
+    <section class="dashboard">
+      <div class="dashboard__item">
+        <img src="./images/icon-facebook.svg" alt="" class="item__icon">
+        <p class="item__username">@nathanf</p>
+        <p class="item__followers">1987<br><span class="item__followers--sub">FOLLOWERS</span></p>
+        <div class="item__count">
+          <img src="./images/icon-up.svg" alt="" class="item__arrow">
+          <p class="count">12 Today</p>
+        </div>
+      </div>
+      <div class="dashboard__item">
+        <img src="./images/icon-twitter.svg" alt="" class="item__icon">
+        <p class="item__username">@nathanf</p>
+        <p class="item__followers">1044<br><span class="item__followers--sub">FOLLOWERS</span></p>
+        <div class="item__count">
+          <img src="./images/icon-up.svg" alt="" class="item__arrow">
+          <p class="count">99 Today</p>
+        </div>
+      </div>
+      <div class="dashboard__item">
+        <img src="./images/icon-instagram.svg" alt="" class="item__icon">
+        <p class="item__username">@realnathanf</p>
+        <p class="item__followers">11k<br><span class="item__followers--sub">FOLLOWERS</span></p>
+        <div class="item__count">
+          <img src="./images/icon-up.svg" alt="" class="item__arrow">
+          <p class="count">1099 Today</p>
+        </div>
+      </div>
+      <div class="dashboard__item">
+        <img src="./images/icon-youtube.svg" alt="" class="item__icon">
+        <p class="item__username">Nathan F.</p>
+        <p class="item__followers">8239<br><span class="item__followers--sub">SUBSCRIBERS</span></p>
+        <div class="item__count">
+          <img src="./images/icon-down.svg" alt="" class="item__arrow">
+          <p class="count down">144 Today</p>
+        </div>
+      </div>
+    </section>
+    <!--Overview for Daily Data-->
+    <h1 class="title--overview">Overview - Today</h1>
+    <section class="data__dashboard">
+      <div class="data__dashboard__item">
+        <p class="data__description">Page Views</p>
+        <img src="./images/icon-facebook.svg" alt="" class="item__icon">
+        <p class="data">87</p>
+        <div class="data__count">
+          <img src="./images/icon-up.svg" alt="" class="item__arrow">
+          <p class="count__percent">3%</p>        
+        </div>
+      </div>
+      <div class="data__dashboard__item">
+        <p class="data__description">Likes</p>
+        <img src="./images/icon-facebook.svg" alt="" class="item__icon">
+        <p class="data">52</p>
+        <div class="data__count">
+          <img src="./images/icon-down.svg" alt="" class="item__arrow">
+          <p class="count__percent down">2%</p>        
+        </div>
+      </div>
+      <div class="data__dashboard__item">
+        <p class="data__description">Likes</p>
+        <img src="./images/icon-instagram.svg" alt="" class="item__icon">
+        <p class="data">5462</p>
+        <div class="data__count">
+          <img src="./images/icon-up.svg" alt="" class="item__arrow">
+          <p class="count__percent">2257%</p>        
+        </div>
+      </div>
+      <div class="data__dashboard__item">
+        <p class="data__description">Profile Views</p>
+        <img src="" alt="" class="item__icon">
+        <p class="data">52k</p>
+        <div class="data__count">
+          <img src="" alt="" class="item__arrow">
+          <p class="count__percent">1375%</p>        
+        </div>
+      </div>
+      <div class="data__dashboard__item">
+        <p class="data__description">Retweets</p>
+        <img src="" alt="" class="item__icon">
+        <p class="data">117</p>
+        <div class="data__count">
+          <img src="" alt="" class="item__arrow">
+          <p class="count__percent">303%</p>        
+        </div>
+      </div>
+      <div class="data__dashboard__item">
+        <p class="data__description">Likes</p>
+        <img src="" alt="" class="item__icon">
+        <p class="data">507</p>
+        <div class="data__count">
+          <img src="" alt="" class="item__arrow">
+          <p class="count__percent">553%</p>        
+        </div>
+      </div>
+      <div class="data__dashboard__item">
+        <p class="data__description">Likes</p>
+        <img src="" alt="" class="item__icon">
+        <p class="data">107</p>
+        <div class="data__count">
+          <img src="" alt="" class="item__arrow">
+          <p class="count__percent">19%</p>        
+        </div>
+      </div>
+      <div class="data__dashboard__item">
+        <p class="data__description">Total Views</p>
+        <img src="" alt="" class="item__icon">
+        <p class="data">1407</p>
+        <div class="data__count">
+          <img src="" alt="" class="item__arrow">
+          <p class="count__percent">12%</p>        
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/darkmode.js" ></script>
 </body>
 </html>

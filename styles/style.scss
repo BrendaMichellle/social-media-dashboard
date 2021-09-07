@@ -1,0 +1,209 @@
+/*font-family: 'Inter', sans-serif; 400 700*/
+/*VARIABLES*/
+
+/*Primary*/
+$limeGreen: hsl(163, 72%, 41%);
+$brightRed: hsl(356, 69%, 56%);
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+$instagram: linear-gradient(45deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+$youtube: hsl(348, 97%, 39%);
+
+/*Dark Theme*/
+$darkTheme: linear-gradient(45deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+/*Background*/
+$darkBlue: hsl(230, 17%, 14%);
+/*Top Background*/
+$darkBlueTop: hsl(232, 19%, 15%);
+/*Card Background*/
+$desaturatedBlue: hsl(228, 28%, 20%);
+/*Text*/
+$desaturatedBlueText: hsl(228, 34%, 66%);
+/*Text*/
+$white: hsl(0, 0%, 100%);
+
+/*--------------------------------------*/
+/*Light Theme*/
+$lightTheme: hsl(230, 22%, 74%);
+/*Background ---- $white*/
+/*Top Background*/
+$paleBlue: hsl(225, 100%, 98%);
+/*Card Background*/
+$grayBlue: hsl(227, 47%, 96%);
+/*Text*/
+$grayBlueText: hsl(228, 12%, 44%);
+/*Text ---- $darkBlue */
+
+$font-weights: (
+  'regular': 400,
+  'bold': 700,
+);
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  background-color: $white;
+  color: $darkBlue;
+  overflow: scroll;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 90vw;
+  height: 90vh;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: map-get($font-weights, bold);
+  color: $darkBlueTop;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+p {
+  color: $grayBlueText;
+  font-weight: map-get($font-weights, bold);
+}
+
+.theme--toggle {
+  @include flexCenter(row);
+  justify-content: space-between;
+}
+
+.dashboard {
+  @include flexCenter(column);
+  margin-top: 30px;
+}
+
+.dashboard__item {
+  background-color: $grayBlue;
+  width: 90vw;
+  padding: 15px 30px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.dashboard__item:nth-child(1) {
+  border-top: 4px solid $facebook;
+}
+.dashboard__item:nth-child(2) {
+  border-top: 4px solid $twitter;
+}
+
+.dashboard__item:nth-child(3) {
+  border-top: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: $instagram;
+}
+
+.dashboard__item:nth-child(4) {
+  border-top: 4px solid $youtube;
+}
+
+.item__username,
+.count {
+  display: inline;
+  font-size: 0.8rem;
+}
+
+.item__username {
+  position: relative;
+  top: -5px;
+}
+
+.count,
+.count__percent {
+  color: $limeGreen;
+}
+
+.down {
+  color: $youtube;
+}
+
+.item__followers {
+  color: $darkBlueTop;
+  font-size: 2.8rem;
+  position: relative;
+  top: 15px;
+}
+
+.item__followers--sub {
+  font-weight: map-get($font-weights, regular);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: $grayBlueText;
+  position: relative;
+  top: -25px;
+}
+
+/* ------ Theme Toggle ----- */
+
+.toggle {
+  width: 40px;
+  height: 20px;
+  position: relative;
+  -webkit-appearance: none;
+  background-color: #c6c6c6;
+  outline: none;
+  border-radius: 10px;
+  transition: 0.5s;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle:checked {
+  background-image: $darkTheme;
+}
+
+.toggle::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.toggle:checked::before {
+  left: 20px;
+}
+
+.darkMode {
+  background-color: $darkBlue;
+  color: $desaturatedBlueText;
+  h1 {
+    color: $white;
+  }
+  .item__followers {
+    color: white;
+  }
+  .dashboard__item {
+    background-color: $desaturatedBlue;
+  }
+}
