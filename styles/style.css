@@ -29,6 +29,7 @@ body {
   background-color: white;
   color: #1e202a;
   overflow: scroll;
+  cursor: pointer;
 }
 
 .container {
@@ -105,6 +106,11 @@ p {
   text-align: center;
 }
 
+.dashboard__item:hover,
+.data__dashboard__item:hover {
+  background-color: #e4e6ee;
+}
+
 .dashboard__item:nth-child(1) {
   border-top: 4px solid #198ff5;
 }
@@ -117,7 +123,10 @@ p {
   border-top: 10px solid;
   border-image-slice: 1;
   border-width: 5px;
+  border-radius: 5px;
   border-image-source: linear-gradient(45deg, #fdc468, #df4996);
+  background-origin: border-box;
+  background-clip: border-box;
 }
 
 .dashboard__item:nth-child(4) {
@@ -285,5 +294,42 @@ p {
 .darkMode .dashboard__item,
 .darkMode .data__dashboard__item {
   background-color: #252a41;
+}
+
+.darkMode .dashboard__item:hover,
+.darkMode .data__dashboard__item:hover {
+  background-color: #202437;
+}
+
+@media screen and (min-width: 700px) {
+  .dashboard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .dashboard__item {
+    margin-right: 20px;
+  }
+  .data__dashboard {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+  }
+  .data__dashboard__item {
+    max-width: 21.5vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */

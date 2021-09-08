@@ -60,6 +60,7 @@ body {
   background-color: $white;
   color: $darkBlue;
   overflow: scroll;
+  cursor: pointer;
 }
 
 .container {
@@ -108,6 +109,9 @@ p {
   margin-bottom: 20px;
   border-radius: 5px;
   text-align: center;
+  &:hover {
+    background-color: rgb(228, 230, 238);
+  }
 }
 
 .dashboard__item:nth-child(1) {
@@ -121,7 +125,10 @@ p {
   border-top: 10px solid;
   border-image-slice: 1;
   border-width: 5px;
+  border-radius: 5px;
   border-image-source: $instagram;
+  background-origin: border-box;
+  background-clip: border-box;
 }
 
 .dashboard__item:nth-child(4) {
@@ -263,5 +270,25 @@ p {
   .dashboard__item,
   .data__dashboard__item {
     background-color: $desaturatedBlue;
+    &:hover {
+      background-color: hsl(230, 27%, 17%);
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .dashboard {
+    @include flexCenter(row);
+  }
+  .dashboard__item {
+    margin-right: 20px;
+  }
+  .data__dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .data__dashboard__item {
+    max-width: 21.5vw;
   }
 }
