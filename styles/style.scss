@@ -69,6 +69,13 @@ body {
   margin-top: 20px;
   width: 90vw;
   height: 90vh;
+  z-index: 2;
+  position: relative;
+  top: 0;
+}
+
+.banner {
+  display: none;
 }
 
 .title {
@@ -274,9 +281,39 @@ p {
       background-color: hsl(230, 27%, 17%);
     }
   }
+  .banner {
+    background-color: $darkBlueTop;
+  }
 }
 
 @media screen and (min-width: 700px) {
+  header {
+    display: grid;
+    grid-template-areas: 'title toggle' 'followers toggle';
+  }
+  .banner {
+    display: inline-block;
+    width: 100vw;
+    height: 35vh;
+    background-color: $paleBlue;
+    z-index: -1;
+    position: absolute;
+    top: -30px;
+    left: -60px;
+  }
+  .title {
+    grid-area: title;
+  }
+  .followers {
+    grid-area: followers;
+  }
+  .theme--toggle {
+    justify-content: center;
+    grid-area: toggle;
+  }
+  .theme__description {
+    margin-right: 5px;
+  }
   .dashboard {
     @include flexCenter(row);
   }
@@ -290,5 +327,8 @@ p {
   }
   .data__dashboard__item {
     max-width: 21.5vw;
+  }
+  hr {
+    display: none;
   }
 }
