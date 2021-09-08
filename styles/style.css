@@ -339,16 +339,21 @@ p {
     grid-area: followers;
   }
   .theme--toggle {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     -ms-grid-column: 2;
     grid-area: toggle;
   }
   .theme__description {
-    margin-right: 5px;
+    position: relative;
+    right: 38px;
+  }
+  .toggle {
+    position: relative;
+    right: 22px;
   }
   .dashboard {
     display: -webkit-box;
