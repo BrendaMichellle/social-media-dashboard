@@ -15,8 +15,8 @@ This is a solution to the [Social media dashboard with theme switcher challenge 
 
 ### Links
 
-- Solution URL: [View solution](https://www.frontendmentor.io/solutions/responsive-order-summary-component-html-and-sass-8Ys_3ucoG)
-- Live Site: [live site](https://brendamichellle.github.io/order-summary-component-main/)
+- Solution URL: [View solution](https://www.frontendmentor.io/solutions/responsive-social-media-dashboard-theme-switch-0vpggWfao)
+- Live Site: [live site](https://brendamichellle.github.io/social-media-dashboard/)
 
 ## My process
 
